@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: org.cdlflex.sf2pdf.DummyTestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.11 sec <<< FAILURE!
+testFail(org.cdlflex.sf2pdf.DummyTest2)  Time elapsed: 0.01 sec  <<< FAILURE!
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.fail(Assert.java:95)
+	at org.cdlflex.sf2pdf.DummyTest2.testFail(DummyTest2.java:11)
+

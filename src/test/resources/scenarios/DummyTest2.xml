@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testScenario>
+  <expectedResults>
+    <expectedResult>The expected test result.</expectedResult>
+  </expectedResults>
+  <name>DummyTest2 name</name>
+  <preconditions/>
+  <scenarioNumber>2</scenarioNumber>
+  <steps>
+    <step>
+      <description>Do some stuff</description>
+    </step>
+    <step>
+      <description>Do some other stuff</description>
+    </step>
+  </steps>
+  <tags>
+    <tag>
+      <name>Akzeptanztest</name>
+    </tag>
+  </tags>
+  <testCategory>GENERAL</testCategory>
+  <testClass>org.cdlflex.sf2pdf.DummyTest2</testClass>
+  <testCommitter>QS_TEAM</testCommitter>
+  <testName>testFail</testName>
+  <testPriority>HIGH</testPriority>
+</testScenario>

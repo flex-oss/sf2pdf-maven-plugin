@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testScenario>
+  <expectedResults>
+    <expectedResult>The expected test result.</expectedResult>
+  </expectedResults>
+  <name>DummyTest3 name</name>
+  <preconditions/>
+  <scenarioNumber>2</scenarioNumber>
+  <steps>
+    <step>
+      <description>Do some stuff</description>
+      <id>5</id>
+    </step>
+    <step>
+      <description>Do some other stuff</description>
+      <id>6</id>
+    </step>
+  </steps>
+  <tags>
+    <tag>
+      <id>1</id>
+      <name>Akzeptanztest</name>
+    </tag>
+  </tags>
+  <testCategory>GENERAL</testCategory>
+  <testClass>org.cdlflex.sf2pdf.DummyTest3</testClass>
+  <testCommitter>QS_TEAM</testCommitter>
+  <testName>testIgnored</testName>
+  <testPriority>HIGH</testPriority>
+</testScenario>
