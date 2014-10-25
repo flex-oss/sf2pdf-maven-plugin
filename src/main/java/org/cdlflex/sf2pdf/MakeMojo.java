@@ -32,28 +32,28 @@ public class MakeMojo extends AbstractMojo {
     /**
      * Location of the surefire reports.
      */
-    @Parameter(defaultValue = "${project.build.directory}/surefire-reports", property = "reportDir", required = true)
+    @Parameter(defaultValue = "${project.build.directory}/surefire-reports", property = "reportDir")
     private File reportDirectory;
 
     /**
      * Location of the scenario descriptions for the reports.
      */
-    @Parameter(defaultValue = "", property = "scenarioDir", required = true)
+    @Parameter(defaultValue = "src/test/resources/scenarios", property = "scenarioDir")
     private File scenarioDirectory;
 
     /**
      * The location of the file containing Properties of the tested App.
      */
-    @Parameter(defaultValue = "", property = "propertyFile", required = true)
+    @Parameter(defaultValue = "src/test/resources/report.properties", property = "propertyFile")
     private File propertyFile;
 
-    @Parameter(defaultValue = "", property = "testedVersion", required = true)
+    @Parameter(defaultValue = "${project.version}", property = "testedVersion")
     private String testedVersion;
 
     /**
      * Location of the produced report.
      */
-    @Parameter(defaultValue = "${project.build.directory}", property = "outputDir", required = true)
+    @Parameter(defaultValue = "${project.build.directory}", property = "outputDir")
     private File outputDirectory;
 
     @Override
