@@ -45,6 +45,7 @@
     <mvn.plugin.plugin.version>3.3</mvn.plugin.plugin.version>
     <mvn.plugin.testing.version>3.2.0</mvn.plugin.testing.version>
     <mvn.surefire.version>2.17</mvn.surefire.version>
+    <mvn.license.plugin.version>2.3</mvn.license.plugin.version>
     
     <itextpdf.version>5.5.3</itextpdf.version>
     <krysalis.version>1.0.0-alpha-1</krysalis.version>
@@ -150,6 +151,19 @@
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>${mvn.license.plugin.version}</version>
+        <configuration>
+          <header>https://raw.githubusercontent.com/flex-oss/flex-oss-parent/master/etc/license/header.txt</header>
+          <strictCheck>true</strictCheck>
+          <excludes>
+            <exclude>src/test/resources/**</exclude>
+            <exclude>src/main/resources/**</exclude>
+          </excludes>
         </configuration>
       </plugin>
     </plugins>
