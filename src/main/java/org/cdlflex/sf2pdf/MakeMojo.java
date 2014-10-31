@@ -49,16 +49,10 @@ public class MakeMojo extends AbstractMojo {
     private File reportDirectory;
 
     /**
-     * Location of the scenario descriptions for the reports.
+     * Location of the sf2pdf resources.
      */
-    @Parameter(defaultValue = "src/test/resources/scenarios", property = "scenarioDir")
-    private File scenarioDirectory;
-
-    /**
-     * The location of the file containing Properties of the tested App.
-     */
-    @Parameter(defaultValue = "src/test/resources/report.properties", property = "propertyFile")
-    private File propertyFile;
+    @Parameter(defaultValue = "src/test/resources/sf2pdf", property = "sf2pdfDir")
+    private File sf2pdfDirectory;
 
     @Parameter(defaultValue = "${project.version}", property = "testedVersion")
     private String testedVersion;
@@ -73,7 +67,7 @@ public class MakeMojo extends AbstractMojo {
     public void execute() throws MojoExecutionException {
         try {
             Collection<Suite> suites = ReportParser.parse(reportDirectory);
-            ScenarioMap scenarios = ScenarioParser.parse(scenarioDirectory);
+            ScenarioMap scenarios = ScenarioParser.parse(new File(sf2pdfDirectory + File.separator + "scenarios"));
             Properties properties = loadProperties();
             for (Suite suite : suites) {
                 ReportGenerator generator = new ReportGenerator(outputDirectory, suite, scenarios, properties);
@@ -87,7 +81,8 @@ public class MakeMojo extends AbstractMojo {
 
     private Properties loadProperties() throws IOException {
         Properties properties = new Properties();
-        properties.load(Files.newReader(propertyFile, Charset.defaultCharset()));
+        properties.load(Files.newReader(new File(sf2pdfDirectory + File.separator + "report.properties"),
+                Charset.defaultCharset()));
         properties.put("version", testedVersion);
         return properties;
     }

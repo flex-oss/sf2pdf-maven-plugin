@@ -29,7 +29,7 @@ public class ScenarioParserTest {
     public void testParse() {
         ScenarioMap map = new ScenarioMap();
         try {
-            map = ScenarioParser.parse(new File("src/test/resources/scenarios"));
+            map = ScenarioParser.parse(new File("src/test/resources/sf2pdf/scenarios"));
         } catch (ScenarioParserException e) {
             fail("Should not fail");
         }
