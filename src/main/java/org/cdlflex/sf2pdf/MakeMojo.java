@@ -39,7 +39,7 @@ import com.google.common.io.Files;
  * Goal which touches a timestamp file.
  * 
  */
-@Mojo(name = "make", defaultPhase = LifecyclePhase.PROCESS_SOURCES)
+@Mojo(name = "make", defaultPhase = LifecyclePhase.PACKAGE)
 public class MakeMojo extends AbstractMojo {
 
     /**
@@ -54,9 +54,6 @@ public class MakeMojo extends AbstractMojo {
     @Parameter(defaultValue = "src/test/resources/sf2pdf", property = "sf2pdfDir")
     private File sf2pdfDirectory;
 
-    @Parameter(defaultValue = "${project.version}", property = "testedVersion")
-    private String testedVersion;
-
     /**
      * Location of the produced report.
      */
@@ -65,6 +62,7 @@ public class MakeMojo extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException {
+        getLog().info("Starting sf2pdf-maven-plugin.");
         try {
             Collection<Suite> suites = ReportParser.parse(reportDirectory);
             ScenarioMap scenarios = ScenarioParser.parse(new File(sf2pdfDirectory + File.separator + "scenarios"));
@@ -77,13 +75,13 @@ public class MakeMojo extends AbstractMojo {
             getLog().error(e);
             throw new MojoExecutionException("Error creating report ", e);
         }
+        getLog().info("Finished sf2pdf-maven-plugin.");
     }
 
     private Properties loadProperties() throws IOException {
         Properties properties = new Properties();
         properties.load(Files.newReader(new File(sf2pdfDirectory + File.separator + "report.properties"),
                 Charset.defaultCharset()));
-        properties.put("version", testedVersion);
         return properties;
     }
 }

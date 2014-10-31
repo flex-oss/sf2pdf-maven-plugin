@@ -38,8 +38,7 @@
         <artifactId>sf2pdf-maven-plugin</artifactId>
         <configuration>
           <reportDirectory>src/test/resources/surefire-reports</reportDirectory>
-          <sf2pdfDirectory>src/test/resources/sf2pdf</sf2pdfDirectory>
-          <testedVersion>1.0-SNAPSHOT</testedVersion>
+          <sf2pdfDirectory>target/test-classes/sf2pdf</sf2pdfDirectory>
           <outputDirectory>target/test-harness/project-to-test</outputDirectory>
         </configuration>
       </plugin>
